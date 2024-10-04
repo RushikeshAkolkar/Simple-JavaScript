@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	var a=[];
+	var b=[];
+	var c=[];
+	var n=Number(prompt("How Many Number Do You Want in first array"));
+	for(var i=0;i<n;i++)
+	{
+		a[i]=Number(prompt("Enter ",i,"Number"));
+	}
+	var i=0;
+	while(i<=n){
+		if (i%2==0) {
+			b[i]=a[i];
+		}
+		else{
+			c[i]=a[i];
+		}
+		i++;
+	}
+	document.write("Even Sorted Array = ");
+	for (var i = 0; i<n; i++) {
+			document.write(b[i],",");
+		}
+		document.write("Odd Sorted Array = ");
+		for (var i = 0; i<n; i++) {
+			document.write(c[i],",");
+		}
+</html>

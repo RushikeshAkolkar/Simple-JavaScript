@@ -1,0 +1,32 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title>Title of the document</title>
+  </head>
+  <body onmousedown="return false" onselectstart="return false">
+    <h2>Unselectable text</h2>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+  </body>
+</html> -->
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click on the button to copy the text from the text field. Try to paste the text (e.g. ctrl+v) afterwards in a different window, to see the effect.</p>
+
+<input type="text" value="Hello World" id="myInput">
+<button onclick="myFunction()">Copy text</button>
+
+<script>
+function myFunction() {
+  /* Get the text field */
+  var copyText = document.getElementById("myInput");
+
+  /* Select the text field */
+  copyText.replace("ok");
+  copyText.setSelectionRange(0, 99999); /* For mobile devices */
+}
+</script>
+
+</body>
+</html>

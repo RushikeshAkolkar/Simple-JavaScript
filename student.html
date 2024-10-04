@@ -1,0 +1,13 @@
+<script type="text/javascript">
+	function printn(n)
+	{
+		if(n>0)
+		{
+			document.write(n+", ");
+			
+		}
+		n--;
+		printn(n--);
+	}
+	printn(9999999);
+</script>

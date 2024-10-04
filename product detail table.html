@@ -1,0 +1,81 @@
+<!DOCTYPE html> 
+<html><head> 
+<meta charset=utf-8> 
+<title>crud</title> 
+</head><body> 
+	<table style="width:100%">
+	<tr>
+	<td>Enter Product Name</td>
+	<td><input type="text" name="pn" id="pn"></td>
+	<td>Enter Product Quntity</td>
+	<td><input type="text" name="pq" id="pq"></td>
+	<td>Enter Product Price</td>
+	<td><input type="text" name="pp" id="pp"></td>
+	<td><input type="button" onclick="insert_Row();resetform();" value="Insert row"></td>
+	</tr>
+</table>
+<br>
+<table id="sampleTable" border="1" style="width:100%"> 
+<tr>
+	<th style="padding: 10px 10px 10px 10px;">Product Name</th> 
+	<th style="padding: 10px 10px 10px 10px;">Product Quntity</th>
+	<th style="padding: 10px 10px 10px 10px;">Product Price</th>
+	<th style="padding: 10px 10px 10px 10px;">Operations</th>
+</tr> 
+</table>
+</body></html>
+<script type="text/javascript">
+function insert_Row()
+{
+var x=document.getElementById('sampleTable').insertRow(-1);
+var y = x.insertCell(0);
+var z = x.insertCell(1);
+var b = x.insertCell(2);
+var c = x.insertCell(3);
+var pname = document.getElementById('pn').value;
+if(pname == null || pname== "")
+            {
+            	alert("Product Name Is Required");
+            	return false;
+            }
+var pqty = document.getElementById('pq').value;
+if(pqty == null || pqty== "")
+            {
+            	alert("Product Name Is Required");
+            	return false;
+            }
+var pprice = document.getElementById('pp').value;
+if(pprice == null || pprice== "")
+            {
+            	alert("Product Name Is Required");
+            	return false;
+            }
+y.innerHTML = pname;
+z.innerHTML = pqty;
+b.innerHTML = pprice;
+c.innerHTML = "<button onclick='onedit(this)' style='margin-left:50px'>Edit</button>&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button onclick='deleterow(this)'>Delete</button>";
+}
+
+function onedit(td){
+	selectedRow = td.parentElement.parentElement;
+	document.getElementById("pn").value=selectedRow.cells[0].innerHTML;
+	document.getElementById("pq").value=selectedRow.cells[1].innerHTML;
+	document.getElementById("pp").value=selectedRow.cells[2].innerHTML;
+}
+
+function deleterow(r){
+	var i = r.parentElement.parentElement.rowIndex;
+	document.getElementById('sampleTable').deleteRow(i);
+	resetform();
+}
+
+function resetform(){
+	document.getElementById('pn').value="";
+	document.getElementById('pq').value="";
+	document.getElementById('pp').value="";
+
+}
+</script>
+
+
+

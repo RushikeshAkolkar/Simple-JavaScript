@@ -1,0 +1,21 @@
+<html>
+<head>
+<title> vowel count</title>
+</head>
+<body onload="vowel_count">
+<script>
+function vowel_count(str1)
+{
+var vowel_list='aeiouAEIOU';
+var vcount=0;
+for(var x=0; x<str1.length; x++)
+{
+if(vowel_list.indexOf(str1[x])!=-1)
+vcount++;
+}
+return vcount;
+}
+document.write("Total number of vowels are"+vowel_count("Hello students"));
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<html>
+<head>
+<title> upercase string</title>
+</head>
+<body onload="uppercase">
+<script>
+function uppercase(str)
+{
+var array1=str.split('');
+var newarray1=[];
+for(var x=0; x<array1.length; x++)
+{
+newarray1.push(array1.chartAt(x).toUpperCase());
+}
+return newarray1.join('');
+}
+document.write(uppercase("Today is wednesday"));
+</script>
+</body>
+</html>

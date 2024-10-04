@@ -1,0 +1,38 @@
+<html>
+<head>
+<title> reverse
+</title>
+</head>
+<body onload="reverse()">
+<script>
+function reverse()
+{
+var r=prompt("Enter First Number");
+var t = r;
+var r1=prompt("Enter Second Number");
+var t1=r1;
+var r2=prompt("1.add\n2.sub\n3.mult\n4.div");
+var x=r2;
+var result=0;
+switch(x)
+{
+case '1' :
+result=Number(t)+Number(t1);
+break;
+case '2' :
+result=t-t1;
+break;
+case '3' :
+result=t*t1;
+break;
+case '4' :
+result=t/t1;
+break;
+default:
+document.write("Invalid Condition");
+}
+document.write("Result=    "+result);
+} 
+</script>
+</body>
+</html>

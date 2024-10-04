@@ -1,0 +1,30 @@
+<table>
+	<tr>
+		<td>BLOCK 1</td>
+		<td>BLOCK 2</td>
+	</tr>
+	<tr>
+		<td><input type="text" name="" id="t1"></td>
+		<td><input type="text" name="" id="t2"></td>
+	</tr>
+	<tr>
+		<td><input type="text" name="" id="t3"></td>
+		<td><input type="text" name="" id="t4"></td>
+	</tr>
+	<tr>
+		<td><input type="text" name="" id="t5"></td>
+		<td><input type="text" name="" id="t6"></td>
+	</tr>
+	<tr>
+		<td><button onclick="copy1(t1,t3,t5,t2,t4,t6)">Copy to Second</button></td>
+		<td><button onclick="copy1(t2,t4,t6,t1,t3,t5)">Copy to First</button></td>
+	</tr>
+</table>
+<script type="text/javascript">
+	function copy1(t11,t33,t55,t22,t44,t66)
+	{
+		t22.value=t11.value;
+		t44.value=t33.value;
+		t66.value=t55.value;
+	}
+</script>

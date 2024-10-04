@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+</head>
+<body>
+
+	<table id="table_box" style="width: 100%;">
+	<tr>
+		<th>Enter Product Name</th>
+		<th>Enter Product Quntity</th>
+		<th>Enter Product Price</th>
+	</tr>
+	<tr>
+		<th><input type="text" id="name" ></th>
+		<th><input type="email" id="email" ></th>
+		<th><input type="number" id="mobile" ></th>
+		<th><button onclick="add_row()">ADD</button></th>
+	</tr>
+</table>
+<table style="margin-top: 20px;padding: 10px 10px 10px 10px;border: 2px black solid; width: 100%;align-content: center;" id="ptable">
+	<tr>
+	<th>Enter Product Name &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span style="font-size: 30px;">|</span>&nbsp&nbsp&nbsp</th>
+	<th>Enter Product Quntity &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span style="font-size: 30px;">|</span>&nbsp&nbsp&nbsp</th>
+	<th>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Enter Product Price </th>
+</tr>
+</table>
+	<script type="text/javascript">
+		function add_row()
+		{
+			var i=0;
+			var n=document.getElementById("name").value;
+            if(n == null || n== "")
+            {
+            	alert("Name Is Required");
+            	return false;
+            }
+			var e=document.getElementById("email").value;
+			if(e == null || e== "")
+            {
+            	alert("Email Is Required");
+            	return false;
+            }
+			var m=document.getElementById("mobile").value;
+			if(m == null || m== "")
+            {
+            	alert("Mobile Number Is Required");
+            	return false;
+            }
+			var out='<td>'+n+'</td><td>'+e+'</td><td>'+m+'</td><td>'+'</td></tr>';
+			document.getElementById('ptable').innerHTML+=out;
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+function insert_Row()
+{
+var x=document.getElementById('sampleTable').insertRow(-1);
+var y = x.insertCell(0);
+var z = x.insertCell(1);
+var b = x.insertCell(2);
+var c = x.insertCell(3);
+var pname = document.getElementById('pn').value;
+if(pname == null || pname== "")
+            {
+            	alert("Product Name Is Required");
+            	return false;
+            }
+var pqty = document.getElementById('pq').value;
+if(pqty == null || pqty== "")
+            {
+            	alert("Product Name Is Required");
+            	return false;
+            }
+var pprice = document.getElementById('pp').value;
+if(pprice == null || pprice== "")
+            {
+            	alert("Product Name Is Required");
+            	return false;
+            }
+y.innerHTML = pname;
+z.innerHTML = pqty;
+b.innerHTML = pprice;
+c.innerHTML = "<button onclick='onedit(this);updateRecord(this)' style='margin-left:50px'>Edit</button>&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button onclick='deleterow(this)'>Delete</button>";
+}
+
+function onedit(td){
+	selectedRow = td.parentElement.parentElement;
+	document.getElementById("pn").value=selectedRow.cells[0].innerHTML;
+	document.getElementById("pq").value=selectedRow.cells[1].innerHTML;
+	document.getElementById("pp").value=selectedRow.cells[2].innerHTML;
+}
+
+function updateRecord(formdata){
+	selectedRow.cells[0].innerHTML=formdata.d1;
+	selectedRow.cells[1].innerHTML=formdata.d2;
+	selectedRow.cells[2].innerHTML=formdata.d3;	
+}
+
+function deleterow(r){
+	var i = r.parentElement.parentElement.rowIndex;
+	document.getElementById('sampleTable').deleteRow(i);
+	resetform();
+}
+
+function resetform(){
+	document.getElementById('pn').value="";
+	document.getElementById('pq').value="";
+	document.getElementById('pp').value="";
+
+}
+</script>
